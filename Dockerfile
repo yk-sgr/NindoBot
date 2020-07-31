@@ -1,9 +1,9 @@
 FROM golang:1.14-alpine as builder
 
 RUN apk add --no-cache gcc libc-dev
-WORKDIR /opt/server
+WORKDIR /opt/bot
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -o server cmd/bot/main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -o bot cmd/bot/main.go
 
 FROM alpine
 
